@@ -1,0 +1,58 @@
+{
+  "name": "craftpulse/craft-intercom",
+  "description": "Intercom integration plugin",
+  "type": "craft-plugin",
+  "version": "1.0.0-alpha.1",
+  "keywords": [
+
+  ],
+  "support":{
+    "email": "support@craftpulse.com",
+    "docs": "https://github.com/craftpulse/craft-intercom/blob/v1/README.md",
+    "issues": "https://github.com/craftpulse/craft-intercom/issues"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "CraftPulse",
+      "email": "support@craftpulse.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.2.0",
+    "craftcms/cms": "^5.0.0"
+  },
+  "require-dev":{
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main",
+    "yiisoft/yii2-redis": "^2.0",
+    "vlucas/phpdotenv": "^5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "craftpulse\\intercom\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Intercom",
+    "handle": "intercom",
+    "developer": "CraftPulse",
+    "developerUrl": "https://craftpulse.com",
+    "documentationUrl": "https://github.com/craftpulse/craft-intercom/blob/v1/README.md",
+    "changelogUrl": "https://github.com/craftpulse/craft-intercom/blob/v1/CHANGELOG.md",
+    "class": "craftpulse\\intercom\\Intercom"
+  },
+  "scripts": {
+    "phpstan": "phpstan --ansi --memory-limit=1G",
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --fix --ansi"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

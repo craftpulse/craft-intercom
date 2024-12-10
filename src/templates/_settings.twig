@@ -1,0 +1,108 @@
+{% requirePermission "intercom:settings" %}
+
+{% extends '_layouts/cp' %}
+{% import '_includes/forms.twig' as forms %}
+
+{% set tabs = {
+    intercom: { label: 'Intercom connection settings'|t('intercom'), url: '#intercom' },
+    company: { label: 'Company information'|t('intercom'), url: '#company' },
+} %}
+
+{% block actionButton %}
+    <input type="submit" class="btn submit" value="{{ 'Save'|t('app') }}">
+{% endblock %}
+
+{% block content %}
+    <input type="hidden" name="action" value="intercom/settings/save">
+    <input type="hidden" name="pluginHandle" value="intercom">
+
+    <div id="intercom" class="flex-fields">
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Intercom base url',
+                instructions: "The base url used to connect to the chatbot."|t('intercom'),
+                name: 'settings[baseUrl]',
+                suggestEnvVars: true,
+                value: settings.baseUrl,
+                required: true,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Intercom App ID',
+                instructions: "The app id used to load the chatbot."|t('intercom'),
+                name: 'settings[appId]',
+                suggestEnvVars: true,
+                value: settings.appId,
+                required: true,
+            }) }}
+        </div>
+    </div>
+
+    <div id="company" class="hidden flex-fields">
+        <div class="field">
+            {{ forms.lightswitchField({
+                label: 'Include company data?'|t('intercom'),
+                instructions: "If the company object should be included."|t('intercom'),
+                name: 'settings[includeCompanyData]',
+                on: settings.includeCompanyData,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Company ID'|t('intercom'),
+                instructions: "The company id used to connect to the company object."|t('intercom'),
+                name: 'settings[companyId]',
+                suggestEnvVars: true,
+                value: settings.companyId,
+                required: false,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Company name'|t('intercom'),
+                instructions: "The company name used to populate the company object."|t('intercom'),
+                name: 'settings[companyName]',
+                suggestEnvVars: true,
+                value: settings.companyName,
+                required: false,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Plan'|t('intercom'),
+                instructions: "The plan the client subscribed to."|t('intercom'),
+                name: 'settings[plan]',
+                suggestEnvVars: true,
+                value: settings.plan,
+                required: false,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Website'|t('intercom'),
+                instructions: "Website URL."|t('intercom'),
+                name: 'settings[website]',
+                suggestEnvVars: true,
+                value: settings.website,
+                required: false,
+            }) }}
+        </div>
+
+        <div class="field">
+            {{ forms.autosuggestField({
+                label: 'Industry'|t('intercom'),
+                instructions: "The industry the client operates in."|t('intercom'),
+                name: 'settings[industry]',
+                suggestEnvVars: true,
+                value: settings.industry,
+                required: false,
+            }) }}
+        </div>
+    </div>
+{% endblock %}
