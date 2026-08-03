@@ -7,7 +7,7 @@
 
   ],
   "support":{
-    "email": "support@craftpulse.com",
+    "email": "support@craft-pulse.com",
     "docs": "https://github.com/craftpulse/craft-intercom/blob/v1/README.md",
     "issues": "https://github.com/craftpulse/craft-intercom/issues"
   },
@@ -15,7 +15,7 @@
   "authors": [
     {
       "name": "CraftPulse",
-      "email": "support@craftpulse.com"
+      "email": "support@craft-pulse.com"
     }
   ],
   "minimum-stability": "dev",
@@ -39,7 +39,7 @@
     "name": "Intercom",
     "handle": "intercom",
     "developer": "CraftPulse",
-    "developerUrl": "https://craftpulse.com",
+    "developerUrl": "https://craft-pulse.com",
     "documentationUrl": "https://github.com/craftpulse/craft-intercom/blob/v1/README.md",
     "changelogUrl": "https://github.com/craftpulse/craft-intercom/blob/v1/CHANGELOG.md",
     "class": "craftpulse\\intercom\\Intercom"

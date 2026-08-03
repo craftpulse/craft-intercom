@@ -4,7 +4,7 @@
  *
  * Sync availabilities coming from Supercontrol
  *
- * @link      https://craftpulse.com
+ * @link      https://craft-pulse.com
  * @copyright Copyright (c) 2024 craftpulse
  */
 
